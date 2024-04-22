@@ -28,23 +28,23 @@ class MainActivity : AppCompatActivity() {
         val name = nameText.text.toString()
         val age = ageText.text.toString().toInt()
 
-        editor.apply(){
-            putString("my_name",name)
-            putInt("my_age",age)
+        editor.apply() {
+            putString("my_name", name)
+            putInt("my_age", age)
             commit()
         }
 
-    }
 
-    override fun onResume() {
-        super.onResume()
-        val name = sf.getString("sf_name", null)
-        val age = sf.getInt("sf_age", 0)
-        nameText.setText(name)
-        if (age != 0) {
-            ageText.setText(age.toString())
+    }
+        override fun onResume() {
+            super.onResume()
+            val name = sf.getString("sf_name", null)
+            val age = sf.getInt("sf_age", 0)
+            nameText.setText(name)
+            if (age != 0) {
+                ageText.setText(age.toString())
+            }
+
         }
-        
-    }
 
-}
+    }
