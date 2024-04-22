@@ -44,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         if (age != 0) {
             ageText.setText(age.toString())
         }
-
-
+        
     }
 
 }
