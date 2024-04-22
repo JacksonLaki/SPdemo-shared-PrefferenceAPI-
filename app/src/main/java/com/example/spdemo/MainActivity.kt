@@ -33,5 +33,19 @@ class MainActivity : AppCompatActivity() {
             putInt("my_age",age)
             commit()
         }
+
     }
+
+    override fun onResume() {
+        super.onResume()
+        val name = sf.getString("sf_name", null)
+        val age = sf.getInt("sf_age", 0)
+        nameText.setText(name)
+        if (age != 0) {
+            ageText.setText(age.toString())
+        }
+
+
+    }
+
 }
