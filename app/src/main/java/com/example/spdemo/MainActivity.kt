@@ -22,4 +22,16 @@ class MainActivity : AppCompatActivity() {
         editor = sf.edit()
 
     }
+
+    override fun onPause() {
+        super.onPause()
+        val name = nameText.text.toString()
+        val age = ageText.text.toString().toInt()
+
+        editor.apply(){
+            putString("my_name",name)
+            putInt("my_age",age)
+            commit()
+        }
+    }
 }
